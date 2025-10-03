@@ -1,0 +1,348 @@
+* {
+    /* position: relative; */
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    /* For rem */
+    font-size: 10px;
+}
+
+body {
+    /* border: 1px solid red; */
+    background: black;
+    font-size: 16px;
+    /* font-family: raleway; */
+    /* font-family: sans-serif; */
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* flex: 1; */
+}
+
+.content {
+    /* border: 1px solid red; */
+    max-width: 1440px;
+    width: 100%;
+    padding: 10rem 10rem;
+
+    @media (max-width:767px) {
+        padding: 5rem 5rem;
+    }
+
+    @media (max-width:420px) {
+        padding: 3rem 3rem;
+    }
+}
+
+#idHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 13rem;
+    padding-top: 5rem;
+
+    #logoArea {
+        /* border: 1px solid red; */
+        background-image: url(./assets/img/Fotogram_Logo.svg);
+        background-repeat: no-repeat;
+        /* background-size: cover; */
+        /* filter: invert(1); */
+        height: 5rem;
+        width: 30rem;
+        /* width: fit-content; */
+        /* object-fit: cover; */
+
+        @media (max-width:767px) {
+            /* border: 1px solid red; */
+            background-image: url(./assets/img/favicon/favicon.svg);
+            height: 50px;
+            width: 50px;
+        }
+    }
+}
+
+main {
+
+    #idSecTitle {
+        color: white;
+        text-align: center;
+        padding: 5rem 5rem;
+    }
+
+    /*  */
+    #idSecAlbum {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        /* padding-bottom: 10rem; */
+
+        /* Using img oder .shapeImgs (Mit JS) */
+        _img {
+            border-radius: 10px;
+            width: 25rem;
+            height: 20rem;
+            object-fit: cover;
+            color: rgba(128, 128, 128, 0.349);
+        }
+
+        .shapeImgs {
+            /* border: 1px solid red; */
+            border-radius: 10px;
+            width: 24rem;
+            height: 20rem;
+            /* height: fit-content; */
+            /* width: fit-content; */
+            object-fit: cover;
+            color: rgba(128, 128, 128, 0.349);
+        }
+
+        /* Using open-Attribut of Dialog-Element */
+        /* Mit Attribute open , "transition" funktioniert nicht! (using class)*/
+        /* Wenn hier in Dialog "display: flex;" gegeben wird,  */
+        /* wird dialog immer eingeschaltet sein.  */
+        /* "Display wird durch showModal() geschaltet. (Default: display: block;) */
+        /* #idDialog[open] {
+            border: 0;
+            position: fixed;
+            top: 50dvh;
+            left: 50dvw;
+            transform: translate(-50%, -50%);
+            background: #0D323F;
+            border-radius: 5rem;
+            width: 50rem;
+            height: 60rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 4rem;
+            color: white;
+            transition: all 5s ease-in;
+        } */
+
+        /* .opened {
+            border: 10px solid red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 5s ease-in;
+
+            &::backdrop {
+                background: #040f13;
+                opacity: 0.8;
+                transition: all 5s ease-in;
+            }
+        } */
+
+
+        #idDialog {
+            border: 0;
+            position: fixed;
+            top: 50dvh;
+            left: 50dvw;
+            transform: translate(-50%, -50%);
+            background: #0D323F;
+            border-radius: 5rem;
+            width: 50rem;
+            height: 60rem;
+            padding: 3rem 4rem;
+            color: white;
+
+            &.opened {
+                /* border: 1px solid red; */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: all 5s ease-in;
+
+            }
+
+            @media (max-width:600px) {
+                padding: 2rem 3rem;
+                width: 40rem;
+                height: 50rem;
+            }
+
+            @media (max-width:480px) {
+                padding: 2rem 3rem;
+                width: 30rem;
+                height: 40rem;
+            }
+
+            &::backdrop {
+                background: #040f13;
+                opacity: 0.8;
+                opacity: 0;
+                /* transition: all 5s ease-in; */
+            }
+
+            #idDialogHeader {
+                /* border: 1px solid red; */
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 3rem;
+
+                @media (max-width:420px) {
+                    padding-bottom: 2rem;
+                }
+
+                #dialogTitle {
+                    /*  */
+                }
+
+                #idBtnCloseDlg {
+                    border: 0;
+                    /* border: 1px solid red; */
+                    background: #0D323F;
+                    border-radius: 5rem;
+
+                    img {
+                        width: 3rem;
+                        /* height: fit-content; */
+                        /* object-fit: cover; */
+                    }
+                }
+            }
+
+            #idDialogImg {
+                /* border: 1px solid red; */
+                width: 100%;
+                height: 100%;
+
+                img {
+                    /* border: 1px solid red; */
+                    border-radius: 10px;
+                    width: 100%;
+                    /* width: fit-content; */
+                    height: 35rem;
+                    object-fit: cover;
+                    color: rgba(128, 128, 128, 0.349);
+
+                    @media (max-width:600px) {
+                        height: 30rem;
+                    }
+
+                    @media (max-width:480px) {
+                        height: 15rem;
+                    }
+                }
+            }
+
+            #idSteeringArea {
+                /* border: 1px solid red; */
+                margin-top: auto;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 7rem;
+                padding-top: 7rem;
+
+                @media (max-width:600px) {
+                    padding: 0 5rem;
+                    padding-top: 5rem;
+                }
+
+                @media (max-width:480px) {
+                    padding: 1rem 3rem;
+                    /* padding-top: 1rem; */
+                }
+
+                button {
+                    /* border: 1px solid red; */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #0D323F;
+                    width: 3rem;
+                    height: 3rem;
+                    /* background-image: url(./assets/img/arrow.png); */
+                    /* background-repeat: no-repeat; */
+                    /* background-size: cover; */
+                    border-radius: 5rem;
+                    border: 0;
+                    padding: 0rem;
+                    /* filter: invert(1); */
+                    /* box-shadow: 0rem 0rem 3rem 1rem red; */
+
+                    @media (max-width:600px) {
+                        width: 2rem;
+                    }
+
+                    @media (max-width:420px) {
+                        width: 2rem;
+                    }
+
+                    .dialogImgArrows {
+                        /* border: 1px solid red; */
+                        background: #00C9E5;
+                        width: 3rem;
+                        /* height: 5rem; */
+                        border-radius: 5rem;
+                        box-shadow: 0rem 0rem 1rem 2rem #00C9E5;
+                        filter: invert(0.8);
+
+                        @media (max-width:600px) {
+                            width: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#idFooter {
+    margin-top: auto;
+    padding: 3rem 0;
+    background: #0D3240;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    #da_logoArea {
+        /* border: 1px solid red; */
+        background-image: url(./assets/img/da_logo_white.svg);
+        background-repeat: no-repeat;
+        /* background-size: cover; */
+        /* filter: invert(1); */
+        height: 50px;
+        width: 160px;
+        /* object-fit: cover; */
+
+        @media (max-width:767px) {
+            background-image: url(./assets/img/da_logo_small.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 5rem;
+            width: 5rem;
+            border-radius: 10px;
+        }
+    }
+
+    p {
+        /* border: 1px solid red; */
+        color: #99ACB3;
+        text-align: center;
+
+        @media (max-width:767px) {
+            font-size: 12px;
+        }
+
+        @media (max-width:420px) {
+            font-size: 1rem;
+        }
+    }
+}

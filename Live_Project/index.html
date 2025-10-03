@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon einbinden -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon.svg">
+
+    <!-- <script type="module" src="./scripts.js" defer></script> -->
+    <script type="module" src="./src/main.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Fotogram</title>
+</head>
+
+<body>
+
+    <header id="idHeader">
+        <a id="logoArea" href="./index.html"></a>
+    </header>
+
+    <main>
+        <section id="idSecTitle">
+            <h1>My personal photo album</h1>
+        </section>
+        <!--  -->
+        <section id="idSecAlbum">
+            <!-- <img src="" alt=""> -->
+            <dialog id="idDialog">
+
+                <header id="idDialogHeader">
+                    <h2 id="dialogTitle">
+                        PlaceHolder for image_name
+                    </h2>
+                    <button id="idBtnCloseDlg">
+                        <img src="./assets/img/close_trans_bg.png" alt="close_trans_bg.png">
+                    </button>
+                </header>
+
+                <div id="idDialogImg">
+                    <!-- <img src="" alt="image"> -->
+                </div>
+
+                <div id="idSteeringArea">
+                    <button id="idBtnGoLeft">
+                        <img src="./assets/img/arrow.png" alt="arrow.png">
+                    </button>
+                    <div id="idShowPosInfo">
+                        <span id="idImgPos"></span>/<span id="idImgQty"></span>
+                    </div>
+                    <button id="idBtnGoRight">
+                        <img src="./assets/img/arrow.png" alt="arrow.png">
+                    </button>
+                </div>
+
+            </dialog>
+
+        </section>
+        <!--  -->
+    </main>
+
+    <footer id="idFooter">
+        <a id="da_logoArea" href="https://developerakademie.com/" target="_blank"></a>
+        <p>2025 Developer Akademie GmbH</p>
+    </footer>
+
+</body>
+
+</html>
